@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Expense Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Expense Tracker</h1>
+      <p>Track your income and expenses easily.</p>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary">
+
+      <div class="card">
+        <h3>Total Income</h3>
+        <p id="totalIncome">₹0</p>
+      </div>
+
+      <div class="card">
+        <h3>Total Expenses</h3>
+        <p id="totalExpense">₹0</p>
+      </div>
+
+      <div class="card">
+        <h3>Current Balance</h3>
+        <p id="balance">₹0</p>
+      </div>
+
+    </section>
+
+    <!-- Add Transaction -->
+    <section class="transaction-form">
+      <div class="form-head">
+         <span>Add Transaction</span>
+         <div class="add-transaction-btn">
+          <button class="income-btn" value="income" onclick="setformType('income')">+Income</button>
+            <button class="expense-btn" value="expense" onclick="setformType('expense')">+Expense</button>
+         </div>
+      </div>
+
+      <form id="transactionForm" class="Form">
+
+        <input  type="text" id="description" placeholder="Transaction description" required>
+
+        <input type="number" id="amount"  placeholder="Amount" min="1" required>
+
+      
+        <!-- categories -->
+        <select class="expense-category">
+          <option value="Food">Food</option>
+          <option value="Health">Health</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Transport">Transport</option>
+          <option value="Bills">Bills</option>
+          <option value="Education">Education</option>
+          <option value="Other">Other</option>
+        </select>
+        <select class="income-category">
+          <option value="Salary">Salary</option>
+          <option value="Freelance">Freelance</option>
+          <option value="Investment">Investment</option>
+          <option value="Gift">Gift</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <input type="date" id="date" required>
+
+        <button type="submit" id="submitBtn">Add Transaction </button>
+         <button type="button" class="cancelBtn" onclick="cancelform()">Cancel</button>
+
+      </form>
+
+    </section>
+
+    <!-- Transactions-->
+    <section class="history">
+
+      <div class="history-header">
+        <h2>Transactions</h2>
+
+        <select id="filterCategory">
+          <option value="all">All Categories</option>
+          <option value="Food">Food</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Transport">Transport</option>
+          <option value="Bills">Bills</option>
+          <option value="Education">Education</option>
+          <option value="Salary">Salary</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div id="transactionList"></div>
+
+    </section>
+      <!-- visual dashboard -->
+    <section class="chart-container">
+      <h3 class="chart-head">Where it's going</h3> <hr>
+      <div class="dashboard"></div>
+    </section>
+    
+
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
