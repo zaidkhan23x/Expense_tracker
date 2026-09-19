@@ -273,7 +273,7 @@ button:hover {
  .chart-container{
   position: relative; left: 0; top: 0; width: 100%;
  }
-.expense-amount{ left 10rem}
+.expense-amount{ left: 10rem;}
  .history{width: 100%; height: 100%;}
   .history-header {
     flex-direction: column;
