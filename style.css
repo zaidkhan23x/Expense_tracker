@@ -6,6 +6,7 @@
 
 :root {
     --back:#1E2A24;
+    --transport-color: #105732;
     --custom:#FAF7F0;
     --line:#E2DCCB;
    --green:#4F6B4B;
@@ -13,6 +14,7 @@
     --gold:#C79A45;
     --text:#241F18;
     --muted:#666;
+    --sky:#3d7186;
 }
 
 body {
@@ -135,36 +137,43 @@ button:hover {
   left: 55%;
   top: 14.32rem;
    width: 45%;
-   height: 90vh;
+   min-height: 50%;
+   padding: 10px;
    align-items: center;
    border: 2px solid var(--line);
 }
 .chart-head{ padding: 1rem; color: var(--muted);}
 .dashboard{
-  --food: 0%;
-  --shopping: 0%; --health: 0%;  --transport: 0%; 
-  --bils: 0%; --education: 0%; --salary:0%; --other: 0%;
+  --content: '70%';
   margin: auto;
   margin-top: 1rem;
-  width: 14rem;
-  height: 14rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
-  /* border: 2.5rem solid blue; */
-  background: conic-gradient(var(--gold) 0% var(--food) ,var(--red) var(--food) var(--shopping),
-  var(--green) 90% 100% );
   display: grid;
   place-items:center;
 }
 .dashboard::before{
-  content: '70%';
+  content: var(--content);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 9rem;
-  height: 9rem;
+  width: 7rem;
+  height: 7rem;
   background-color: var(--custom);
   border-radius: 50%;
 }
+.color-logo{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+}
+.dashboard-box div{padding: 5px;}
+.expense-amount{position: relative; right: -20rem;}
+.text-span{width: 5rem; display: inline-block;}
+
 /* History */
 
 .history {
@@ -174,6 +183,9 @@ button:hover {
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   width: 55%;
   height: 45%;
+  max-height: 55vh;
+  display: grid;
+  overflow-y: scroll;
 }
 
 .history-header {
