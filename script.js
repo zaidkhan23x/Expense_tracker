@@ -45,7 +45,6 @@ function setformType(type){
      expense_category.setAttribute('id', '');
     income_category.setAttribute("id", "category");
     categoryInput = income_category;
-     console.log(categoryInput);
       typeInput = 'income';
     }
 }
